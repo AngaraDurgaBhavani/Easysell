@@ -5,7 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
 
-export const revalidation = 0;
+export const revalidate = 0;
 
 type Props = {
   params: Promise<{ slug: string }>;
