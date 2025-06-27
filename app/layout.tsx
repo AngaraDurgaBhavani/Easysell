@@ -6,10 +6,11 @@ import Footer from "./components/footer";
 import { getCanonicalUrl } from "./utils";
 
 const inter = Nunito({ subsets: ['latin'] });
-const cuteFont = Josefin_Sans({ subsets: ['latin'], weight: '400' });
+// const cuteFont = Josefin_Sans({ subsets: ['latin'], weight: '400' });
 
 
 export const metadata: Metadata = {
+  
   title: "Easy Sell",
   description: "Discover the power of simplicity with Easy Sell - the ultimate solution for effortless selling products.Unlock convenience and boost your sales.",
   alternates: {
@@ -26,12 +27,14 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={inter.className}
+        //font={cuteFont.className} font={cuteFont.className}
+
 
       >
-        <Header font={cuteFont.className} />
+        <Header  />
         <hr className="h-0.5 bg-gray-100 border-0"></hr>
         <div className="bg-[#f4eee5] py-12"> {children}</div>
-        <Footer font={cuteFont.className} />
+        <Footer  />
       </body>
     </html>
   );

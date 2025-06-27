@@ -1,6 +1,6 @@
 import { createClient } from "@/app/supabase/client";
 import { getCanonicalUrl, getImageUrl } from "@/app/utils";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -8,14 +8,12 @@ import React from "react";
 export const revalidation = 0;
 
 type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ slug: string }>;
+  // searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const slug = params.slug;
 
   const supabase = createClient();
@@ -30,8 +28,8 @@ export async function generateMetadata(
   }
 
   return {
-    title: post.name || '',
-    description: post.description || ' ',
+    title: post.name,
+    description: post.description,
     openGraph: {
       images: [getImageUrl(post.imageUrl)],
     },
@@ -57,7 +55,8 @@ export async function generateStaticParams() {
 
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
 
   const supabase = createClient();
 
@@ -68,7 +67,7 @@ export default async function Page({ params }: Props) {
     .single();
 
   if (!data) {
-    notFound();
+   return   notFound();
   }
 
   return (
@@ -130,4 +129,6 @@ export default async function Page({ params }: Props) {
     </div>
   )
 }
+
+
 
