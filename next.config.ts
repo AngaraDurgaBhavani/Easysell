@@ -1,7 +1,30 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.dhresource.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'saduhergmlucssvnkfqc.supabase.co',
+        pathname: '/storage/v1/object/public/storage/**',
+      },
+    ],
+  },
+
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '20mb',
+    },
+  },
+
+
+
 };
 
 export default nextConfig;
