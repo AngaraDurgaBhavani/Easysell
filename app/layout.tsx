@@ -11,8 +11,8 @@ const inter = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   
-  title: "Easy Sell",
-  description: "Discover the power of simplicity with Easy Sell - the ultimate solution for effortless selling products.Unlock convenience and boost your sales.",
+  title: "Quick Sell",
+  description: "Discover the power of simplicity with Quick Sell - the ultimate solution for effortless selling products.Unlock convenience and boost your sales.",
   alternates: {
     canonical: getCanonicalUrl(),
   }
@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <Header  />
         <hr className="h-0.5 bg-gray-100 border-0"></hr>
-        <div className="bg-[#f4eee5] py-12"> {children}</div>
+        <div className="bg-[#f0ede8] py-12"> {children}</div>
         <Footer  />
       </body>
     </html>
