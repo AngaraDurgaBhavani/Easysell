@@ -30,6 +30,7 @@ const Card: React.FC<CardProps> = ({
                             alt={name}
                             className="rounded-t"
                             sizes="100vw"
+                            
                         />
                     </div>
                     <div className="px-6 py-4">
@@ -48,11 +49,6 @@ const Card: React.FC<CardProps> = ({
 };
 
 export default Card;
-
-
-
-
-
 
 
 

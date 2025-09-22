@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Quick Sell - Upload',
-  description: 'Upload your files easily using Easy Sell',
+  description: 'Upload your files easily using Quickly Sell',
   alternates: {
     canonical: `${getCanonicalUrl()}/products/upload`,
   },

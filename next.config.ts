@@ -4,11 +4,11 @@ const nextConfig: NextConfig = {
 
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'www.dhresource.com',
-        pathname: '/**',
-      },
+      // {
+      //   protocol: 'https',
+      //   hostname: '',
+      //   pathname: '/**',
+      // },
       {
         protocol: 'https',
         hostname: 'saduhergmlucssvnkfqc.supabase.co',
@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  
 
   experimental: {
     serverActions: {
@@ -28,3 +29,6 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+
+
